@@ -1,5 +1,6 @@
 package me.yokeyword.indexablerv;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -8,13 +9,13 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.IntDef;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.IntDef;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -35,7 +36,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import me.yokeyword.indexablerecyclerview.R;
+import me.yokeyword.indexablerv.R;
 import me.yokeyword.indexablerv.database.DataObserver;
 import me.yokeyword.indexablerv.database.HeaderFooterDataObserver;
 import me.yokeyword.indexablerv.database.IndexBarDataObserver;
@@ -383,6 +384,7 @@ public class IndexableLayout extends FrameLayout {
         mRecy.setLayoutManager(mLayoutManager);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initListener() {
         mRecy.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

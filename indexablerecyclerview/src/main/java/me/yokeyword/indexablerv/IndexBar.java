@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import me.yokeyword.indexablerecyclerview.R;
+import me.yokeyword.indexablerv.R;
 
 /**
  * Created by YoKey on 16/10/6.

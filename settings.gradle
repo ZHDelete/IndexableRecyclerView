@@ -1,2 +1,28 @@
-include ':sample', ':indexablerecyclerview'
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        //for: 'com.github.promeg:tinypinyin:2.0.3', 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3'
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+    }
+}
 
+rootProject.name = "IndexableRecyclerView"
+include ':indexablerecyclerview'
+include ':sample'
